@@ -1,0 +1,11 @@
+{
+  "name": "seenbyai",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@anthropic-ai/sdk": "latest",
+    "@google/genai": "latest",
+    "@netlify/blobs": "latest",
+    "openai": "latest"
+  }
+}

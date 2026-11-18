@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SeenByAI – Does ChatGPT recommend your business? Free AI visibility check</title>
+<meta name="description" content="Free check: see if ChatGPT, Claude and Gemini recommend your business when customers ask, which competitors they name instead, and 5 fixes to get recommended.">
+<meta property="og:title" content="Does ChatGPT recommend your business?">
+<meta property="og:description" content="Free 60-second check across ChatGPT, Claude and Gemini. See your AI visibility score and the competitors AI names instead.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='44' fill='%23111'/><circle cx='50' cy='50' r='18' fill='%2339d98a'/></svg>">
+<style>
+:root{--ink:#0f1115;--muted:#5b6170;--line:#e6e8ee;--bg:#fafbfc;--accent:#12b76a;--accent-ink:#05603a;--bad:#d92d20;--warn:#dc6803}
+*{box-sizing:border-box}body{margin:0;font:16px/1.55 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:var(--bg)}
+.wrap{max-width:880px;margin:0 auto;padding:22px}
+nav{display:flex;justify-content:space-between;align-items:center}
+.brand{font-weight:800;letter-spacing:-.02em;font-size:20px}.brand span{color:var(--accent)}
+nav a{color:var(--muted);text-decoration:none;font-size:15px}
+.hero{padding:44px 0 18px;text-align:center}
+h1{font-size:clamp(32px,6vw,54px);line-height:1.05;letter-spacing:-.035em;margin:0 0 14px}
+.sub{font-size:19px;color:var(--muted);max-width:640px;margin:0 auto}
+form.check{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px;margin:28px auto 0;box-shadow:0 10px 30px -18px rgba(16,24,40,.25);display:grid;grid-template-columns:1fr 1fr;gap:12px}
+label{font-size:13px;font-weight:600;color:var(--muted);display:block;margin-bottom:4px}
+input{width:100%;padding:12px 13px;border:1px solid #d0d5dd;border-radius:10px;font:inherit}
+input:focus{outline:2px solid var(--accent);border-color:transparent}
+.full{grid-column:1/-1}
+button{font:inherit;font-weight:700;border:0;border-radius:12px;padding:14px 18px;cursor:pointer;background:var(--ink);color:#fff}
+button:disabled{opacity:.6;cursor:wait}
+.fine{font-size:13px;color:var(--muted);text-align:center}
+.trust{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:14px;color:var(--muted);font-size:14px}
+#status{text-align:center;margin:22px 0;color:var(--muted)}
+.err{color:var(--bad)}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:22px;margin:16px 0}
+.scorebox{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.ring{width:140px;height:140px;border-radius:50%;display:grid;place-items:center;font-size:40px;font-weight:800;letter-spacing:-.03em;flex:none}
+.models{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.pill{border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px}
+h2{letter-spacing:-.02em;margin:0 0 10px}
+ol.fixes li{margin:10px 0}.fixes b{display:block}
+table{width:100%;border-collapse:collapse;font-size:15px}td,th{padding:8px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+.yes{color:var(--accent-ink);font-weight:700}.no{color:var(--bad);font-weight:700}
+details{border-top:1px solid var(--line);padding:10px 0}summary{cursor:pointer;font-weight:600}
+.ex{white-space:pre-wrap;font-size:14px;color:#333;background:var(--bg);border-radius:10px;padding:10px;margin-top:8px}
+.pro{background:var(--ink);color:#fff;border:0}
+.pro h2{color:#fff}.pro p,.pro li{color:#c9ced8}
+.price{font-size:34px;font-weight:800}.price small{font-size:16px;color:#c9ced8;font-weight:500}
+.btn-acc{background:var(--accent);color:#04241a;display:inline-block;text-decoration:none;padding:14px 20px;border-radius:12px;font-weight:800}
+.lead{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.lead input{flex:1;min-width:220px}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.how div{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px}
+footer{color:var(--muted);font-size:13px;margin:40px 0 10px;text-align:center}
+@media(max-width:680px){form.check{grid-template-columns:1fr}.how{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><div class="brand">Seen<span>By</span>AI</div><a href="#pro">Pro</a></nav>
+
+<section class="hero">
+  <h1>Does ChatGPT recommend your business?</h1>
+  <p class="sub">More customers now ask AI assistants instead of Google. Find out in 60 seconds whether ChatGPT, Claude and Gemini name you — or your competitors.</p>
+  <form class="check" id="f">
+    <div><label for="b">Business name</label><input id="b" name="business" required maxlength="80" placeholder="Sakura Ramen"></div>
+    <div><label for="c">What you do</label><input id="c" name="category" required maxlength="60" placeholder="ramen restaurant"></div>
+    <div><label for="l">City / area (optional)</label><input id="l" name="city" maxlength="60" placeholder="Shibuya, Tokyo"></div>
+    <div><label for="w">Website (optional)</label><input id="w" name="website" maxlength="120" placeholder="sakuraramen.jp"></div>
+    <button class="full" id="go" type="submit">Run my free AI check →</button>
+  </form>
+  <div class="trust"><span>✓ Free, no signup</span><span>✓ 3 AI assistants, 12 real customer questions</span><span>✓ 5 tailored fixes</span></div>
+</section>
+
+<div id="status"></div>
+<div id="out"></div>
+
+<section class="how" id="how">
+  <div><b>1. We ask like a customer</b><p>Real buyer questions such as “best ramen restaurant in Shibuya?” sent to ChatGPT, Claude and Gemini.</p></div>
+  <div><b>2. We check who gets named</b><p>Your score is the share of answers that recommend you, plus the competitors named instead.</p></div>
+  <div><b>3. You get the fix list</b><p>Specific actions for your category and city that make AI assistants more likely to recommend you.</p></div>
+</section>
+
+<section class="card pro" id="pro">
+  <h2>SeenByAI Pro</h2>
+  <div class="price">$29<small>/month</small></div>
+  <ul>
+    <li>Weekly tracking of 20 customer questions across ChatGPT, Claude and Gemini</li>
+    <li>Email report when you gain or lose a recommendation, and which competitor took it</li>
+    <li>Fresh fix list every week, ranked by impact</li>
+    <li>Up to 3 locations or product lines</li>
+  </ul>
+  <a class="btn-acc" id="buy" href="#pro-waitlist">Start Pro →</a>
+  <form class="lead" id="pro-waitlist" name="pro" method="POST" data-netlify="true" netlify-honeypot="hp">
+    <input type="hidden" name="form-name" value="pro">
+    <input type="hidden" name="business" id="pro-biz">
+    <p hidden><input name="hp"></p>
+    <input type="email" name="email" required placeholder="you@business.com">
+    <button type="submit">Get Pro access</button>
+  </form>
+  <p class="fine" style="color:#9aa3b2;text-align:left" id="pro-note">Leave your email and we'll send your Pro access link.</p>
+</section>
+
+<footer>SeenByAI checks what AI assistants answer from their own knowledge at the time of the check; answers vary between runs. Not affiliated with OpenAI, Anthropic or Google.</footer>
+</div>
+
+<script>
+const CHECKOUT_URL = ""; // filled in when payments go live
+if (CHECKOUT_URL) { const b=document.getElementById('buy'); b.href=CHECKOUT_URL; document.getElementById('pro-waitlist').hidden=true; document.getElementById('pro-note').hidden=true; }
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function color(score){ return score>=50?'#12b76a':score>=20?'#dc6803':'#d92d20'; }
+function verdict(s){ return s>=50?'AI assistants recommend you often.':s>=20?'AI sometimes mentions you, but competitors win most answers.':'AI assistants are recommending your competitors, not you.'; }
+
+$('#f').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const data = Object.fromEntries(new FormData(e.target));
+  $('#go').disabled = true; $('#out').innerHTML = '';
+  $('#status').innerHTML = 'Asking ChatGPT, Claude and Gemini 12 customer questions… this takes about 20–40 seconds.';
+  try {
+    const r = await fetch('/api/check', { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(data) });
+    const j = await r.json();
+    if (!r.ok) throw new Error(j.error || 'Something went wrong.');
+    $('#status').innerHTML = '';
+    render(j);
+    document.getElementById('pro-biz').value = j.business;
+  } catch (err) {
+    $('#status').innerHTML = '<span class="err">' + esc(err.message) + '</span>';
+  } finally { $('#go').disabled = false; }
+});
+
+function render(j){
+  const c = color(j.score);
+  const models = j.byModel.map(m => `<span class="pill">${esc(m.label)}: <b>${m.mentioned}/${m.asked}</b></span>`).join('');
+  const comps = j.competitors.length ? `<div class="card"><h2>Who AI recommends instead</h2><table><tr><th>Business</th><th>Named in</th></tr>${j.competitors.map(x=>`<tr><td>${esc(x.name)}</td><td>${esc(x.count)} answers</td></tr>`).join('')}</table></div>` : '';
+  const fixes = j.fixes.length ? `<div class="card"><h2>5 fixes to get recommended</h2><ol class="fixes">${j.fixes.map(f=>`<li><b>${esc(f.title)}</b>${esc(f.detail)}</li>`).join('')}</ol></div>` : '';
+  const ans = j.answers.map(a => `<details><summary>${esc(a.label)} — “${esc(a.prompt)}” <span class="${a.mentioned?'yes':'no'}">${a.mentioned?'✓ named you'+(a.position?' (#'+a.position+')':''):'✗ not named'}</span></summary><div class="ex">${esc(a.excerpt)}</div></details>`).join('');
+  $('#out').innerHTML = `
+    <div class="card"><div class="scorebox">
+      <div class="ring" style="border:12px solid ${c};color:${c}">${j.score}</div>
+      <div><h2>AI visibility score for ${esc(j.business)}</h2><p>${verdict(j.score)} You were named in <b>${j.hits} of ${j.total}</b> AI answers.</p><div class="models">${models}</div></div>
+    </div></div>
+    ${comps}${fixes}
+    <div class="card"><h2>What the AI actually said</h2>${ans}</div>
+    <div class="card" style="text-align:center"><b>AI answers change every week.</b> Track your score and get alerts when a competitor takes your spot. <a href="#pro">See Pro →</a></div>`;
+  $('#out').scrollIntoView({behavior:'smooth'});
+}
+</script>
+</body>
+</html>
